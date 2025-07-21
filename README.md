@@ -51,14 +51,14 @@ Token and expiry fields are cleared.
 
 🧾 Tech Stack
 
-Spring Boot 3+
+➡️ Spring Boot 3+
+➡️ Spring Security
+➡️ JWT (io.jsonwebtoken)
+➡️ MongoDB with Spring Data
+➡️ JavaMailSender
+➡️ Project Lombok
 
-Spring Security
+🧪 Postman API Collection
 
-JWT (io.jsonwebtoken)
-
-MongoDB with Spring Data
-
-JavaMailSender
-
-Project Lombok
+You can import this collection into Postman to test all endpoints:
+📄 [taskmanager-api-collection.json](./taskmanager-api-collection.json)
