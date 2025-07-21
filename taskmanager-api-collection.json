@@ -1,0 +1,652 @@
+{
+	"info": {
+		"_postman_id": "9c3e411f-ec52-41db-b38b-20138ef22743",
+		"name": "TaskManager API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37895345"
+	},
+	"item": [
+		{
+			"name": "TaskController",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6IkdhdXJhdlNvbmkiLCJzdWIiOiJHYXVyYXZTb25pIiwiaWF0IjoxNzUyNDQzODg0LCJleHAiOjE3NTI0NDc0ODR9.LVcNK2AJZr0OnUfSXmXaKCc_LYnbhFvWd2aIecmN1mnO217kZPWZ5oIecIamI0Le",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Implement alert notification for tasks\",\n    \"description\": \"Finish implementing the alert notification and task features in the project and make sure to test the application\",\n    \"status\": \"PENDING\",\n    \"priority\": \"HIGH\",\n    \"taskDeadline\": \"2025-07-15\"\n}"
+						},
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/task/create",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"task",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task by Title",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/task/get-task?title=",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"task",
+								"get-task"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXSwidXNlcm5hbWUiOiJHYXVyYXZTb25pIiwic3ViIjoiR2F1cmF2U29uaSIsImlhdCI6MTc1MjM5Nzg1NywiZXhwIjoxNzUyNDAxNDU3fQ.o7ZCOPEFX-QlY7Rb1C9wLtQ5DpxBozkRohW0s-9vX6qPaUm0XBT8l_w_ElDhdNmN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/task/get-tasks",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"task",
+								"get-tasks"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks by Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/task/get-task/status?username={{username}}&status=PENDING",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"task",
+								"get-task",
+								"status"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								},
+								{
+									"key": "status",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks by Priority",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/task/get-task/priority?username={{username}}&priority=HIGH",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"task",
+								"get-task",
+								"priority"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								},
+								{
+									"key": "priority",
+									"value": "HIGH"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXSwidXNlcm5hbWUiOiJHYXVyYXZTb25pIiwic3ViIjoiR2F1cmF2U29uaSIsImlhdCI6MTc1MjM5Nzg1NywiZXhwIjoxNzUyNDAxNDU3fQ.o7ZCOPEFX-QlY7Rb1C9wLtQ5DpxBozkRohW0s-9vX6qPaUm0XBT8l_w_ElDhdNmN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/task/delete-task?title=Finish Project",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"task",
+								"delete-task"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "Finish Project"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Finish Project\",\n  \"description\": \"Updated description - completed UI\",\n  \"dueDate\": \"2025-07-06\",\n  \"status\": \"IN_PROGRESS\",\n  \"priority\": \"MEDIUM\"\n}"
+						},
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/task/update-task?username={{username}}&title=Finish Project",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"task",
+								"update-task"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								},
+								{
+									"key": "title",
+									"value": "Finish Project"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdminController",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXSwidXNlcm5hbWUiOiJHYXVyYXZTb25pIiwic3ViIjoiR2F1cmF2U29uaSIsImlhdCI6MTc1MzAwMjQ0OSwiZXhwIjoxNzUzMDA2MDQ5fQ.sDQ9rzJNGkwegEMvWzmiYsrhc67gwyC_ckU-rOkERCEk_BeeW2T-czB1sgEcrMG5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/admin/get-all",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXSwidXNlcm5hbWUiOiJHYXVyYXZTb25pIiwic3ViIjoiR2F1cmF2U29uaSIsImlhdCI6MTc1MzAwMjQ0OSwiZXhwIjoxNzUzMDA2MDQ5fQ.sDQ9rzJNGkwegEMvWzmiYsrhc67gwyC_ckU-rOkERCEk_BeeW2T-czB1sgEcrMG5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/admin/get-user?username=BilluBadmash",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								"get-user"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "BilluBadmash"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXSwidXNlcm5hbWUiOiJHYXVyYXZTb25pIiwic3ViIjoiR2F1cmF2U29uaSIsImlhdCI6MTc1MjQ0MzU1OCwiZXhwIjoxNzUyNDQ3MTU4fQ.OvULVyAM4h9r6OZs4XPn7XUhjZDITkWxaHYT-oMQ_WVb6B1uyumO3G_mWSpnlvty",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/admin/delete-user?username=GauravSoni",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								"delete-user"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "GauravSoni"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"john_doe\",\n  \"fullName\": \"Johnathan Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"role\": \"USER\"\n}"
+						},
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/admin/update-user?username={{username}}",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								"update-user"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "GauravSoni123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "GauravSoni",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/admin/update-role?username=gauravsoni",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								"update-role"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "gauravsoni"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXSwidXNlcm5hbWUiOiJHYXVyYXZTb25pIiwic3ViIjoiR2F1cmF2U29uaSIsImlhdCI6MTc1MjM5Nzg1NywiZXhwIjoxNzUyNDAxNDU3fQ.o7ZCOPEFX-QlY7Rb1C9wLtQ5DpxBozkRohW0s-9vX6qPaUm0XBT8l_w_ElDhdNmN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/admin/get-all-tasks",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								"get-all-tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"gauravsoni54670@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/auth/forgot-password",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPassword\": \"Gauravsoni1234\",\n    \"token\": \"843282\"\n}"
+						},
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/auth/reset-password",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PublicController",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"GauravSoni\",\n  \"password\": \"GauravSoni123\",\n  \"email\": \"gauravsoni54670@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/api/public/sign-up",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"public",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"GauravSoni\",\n    \"password\": \"Gauravsoni123\"\n}"
+						},
+						"url": {
+							"raw": "https://taskmanager-xvzu.onrender.com/auth",
+							"protocol": "https",
+							"host": [
+								"taskmanager-xvzu",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "john_doe"
+		}
+	]
+}
